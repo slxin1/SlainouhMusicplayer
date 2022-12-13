@@ -49,12 +49,12 @@ function btnplay() {
 
         sound.play()
         button_play.value = "Pause";
-        document.getElementById('play').style.backgroundImage="url(src/icon/pause.png)"
+        document.getElementById('play').style.backgroundImage="url(src/icon/white_pause.png)"
         nameSong();
     } else {                                        //              BOUTON PLAY - PAUSE 
         button_play.value = "Play";
         sound.pause();
-        document.getElementById('play').style.backgroundImage="url(src/icon/play-button.svg)"
+        document.getElementById('play').style.backgroundImage="url(src/icon/white-play-button.png)"
     }
 }
 
@@ -90,7 +90,7 @@ function btnskip() {
     // }
 
     button_play.value = "Pause";
-    document.getElementById('play').style.backgroundImage="url(src/icon/pause.png)"
+    document.getElementById('play').style.backgroundImage="url(src/icon/white-pause.png)"
     console.log(number)
     }
 
@@ -109,7 +109,7 @@ function btnprevious() {
         sound.play()
     }
     button_play.value = "Pause";
-    document.getElementById('play').style.backgroundImage="url(src/icon/pause.png)"
+    document.getElementById('play').style.backgroundImage="url(src/icon/white-pause.png)"
 }
 
 // const button_play = document.getElementById("play")

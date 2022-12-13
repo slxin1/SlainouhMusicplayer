@@ -1,32 +1,212 @@
+@font-face{
+    font-family:"helvetica";
+    src:url("https://candyfonts.com/wp-data/2018/10/26/11538/HELR45W.ttf") format("woff"),
+    url("https://candyfonts.com/wp-data/2018/10/26/11538/HELR45W.ttf") format("opentype"),
+    url("https://candyfonts.com/wp-data/2018/10/26/11538/HELR45W.ttf") format("truetype");
+}
+
+* {
+    margin: 0 auto;
+  } 
+
 body {
-    /* background-color: #2f2f2f; */
-    background-color: black;
+    background-color: fff;
+    transition: background-color .5s;
 }
 
-#player_background {
-    background-image: url("./src/background/background.png");
-    background-position: center;
-    width: 60%;
+/*.sidenav {
     height: 100%;
-    position: absolute;
-    top: 0%;
-    left: 40%;
-    z-index: 2;
-    box-shadow: 0px 1px 12px;
-    /* transform: translate(-50%, -50%); */
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: white;
+    box-shadow: 0px 5px 6px;
+    overflow-x: hidden;
+    padding-top: 60px;
+    transition: 0,5;
+} */
+
+.sidenav {
+    height: 100%;
+    width: 120px;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: white;
+    box-shadow: -10px 1px 20px;
+    border-top-right-radius: 40px;
+    border-bottom-right-radius: 40px;
+    overflow-x: hidden;
+    padding-top: 0px;
+    transition: all .5s;
+  } 
+
+#main {
+    transition: margin-left .5s;
+    padding: 16px;
 }
 
-#player {
-    background-color: white;
-    width: 450px;
-    height: 600px;
+/* .main {
+    margin-left: 100px;
+} */
+
+#album {
+    display: inline-flex;
+    flex-wrap: nowrap;
+    gap: 3%;
+    padding-left: 10%;
+    padding-top: 4%;
+} 
+
+#history {
+    display: inline-flex;
+    flex-wrap: nowrap;
+    gap: 3%;
+    padding-left: 10%;
+    padding-top: 2%;
+} 
+
+.grid {
+    flex: 30%;
+    pointer-events: none;
+}
+
+.cover {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    -webkit-box-shadow: 5px 5px 5px -3px rgba(0,0,0,0.25); 
+    box-shadow: 5px 5px 5px -3px rgba(0,0,0,0.25);
+}
+
+@media screen and (max-height: 450px) {
+    .sidenav {padding-top: 15px;}
+    .sidenav a {font-size: 18px;}
+  }
+
+.section {
     position: absolute;
-    top: 50%;
-    left: 70%;
-    transform: translate(-50%, -50%);
-    border-radius: 2%;
-    box-shadow: 4px 6px 8px;
-    z-index: 3;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#playlists {
+    color: black;  
+    margin-left: 8%;
+    margin-top: 1%;
+    transition: margin-left .5s;
+}
+
+#his {
+    color: black;  
+    margin-top: -1%;
+    margin-left: 8%;
+    transition: margin-left .5s;
+    font-size: 200%;
+}
+
+hr {
+    color: black;
+    width: 30%;
+    margin-top: 1.7%;
+    margin-right: 30%;
+    transition: margin-left .5s;
+}
+
+.button {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    -webkit-box-shadow: 5px 5px 5px -3px rgba(0,0,0,0.25); 
+    box-shadow: 5px 5px 5px -3px rgba(0,0,0,0.25);
+    border: none;
+}
+
+.button:hover {
+    cursor:pointer;
+}
+
+#skip {
+    background: url(./src/icon/white-skip-button.png);
+    background-size: cover;
+    background-position: center;
+    z-index: 1;
+}
+
+#skip {
+    position: fixed;
+    top: 60%;
+    left: -2%;
+    transition: all .5s;
+}
+
+#previous {
+    background: url(./src/icon/white-previous-button.png);
+    background-size: cover;
+    background-position: center;
+}
+
+#previous {
+    position: fixed;
+    top: 60%;
+    left: -2%;
+    transition: all .5s;
+}
+
+#play {
+    background: url(./src/icon/white-play-button.png);
+    background-size: cover;
+    background-position: center;
+}
+
+#play {
+    position: fixed;
+    top: 60%;
+    left: -2%;
+    transition: all .5s;
+}
+
+#song_played {
+    object-fit: cover;
+    object-position: 100%;
+    width: 80px;
+    height: 300px;
+    -webkit-box-shadow: 5px 5px 5px -3px rgba(0,0,0,0.25); 
+    box-shadow: 5px 5px 5px -3px rgba(0,0,0,0.25);
+}
+
+#player_cover {
+    position: fixed;
+    top: 20%;
+    transition: all .5s;
+}
+
+#user {
+    background: url(./src/cover/avatar.jpeg);
+    background-size: cover;
+    border: none;
+    border-radius: 50%;
+    width: 65px;
+    height: 65px;
+}
+
+#user {
+    position: fixed;
+    bottom: 1.5%;
+    left: 2%; 
+    transition: all .5s;
+}
+
+#namesong {
+    position: fixed;
+    top: 55%;
+    left: 0%; 
+    transition: all .5s;
+    font-family: Arial, Helvetica, sans-serif;
+    font-style: normal;
+    font-size: medium;
 }
 
 #input-URL {
@@ -35,61 +215,12 @@ body {
     border: none;
     border-radius: 10px;
     position: absolute;
-    top: 50%;
-    left: 9%;
+    top: 3%;
+    right: 2%;
 }
 
-#buttons {
-    display: flex;
-    justify-content: center;
-    margin-top: 10%;
+#convert-button {
+    position: absolute;
+    top: 4.5%;
+    right: 25%;
 }
-
-#play {
-    color: rgba(0, 0, 0, 0.0);
-    background: url(./src/icon/play-button.svg);
-    /* box-shadow: 4px 4px 6px black; */
-    background-size: cover;
-    width: 100px;
-    height: 100px;
-    border: 0px none;
-}
-
-#previous {
-    color: rgba(0, 0, 0, 0.0);
-    background: url(./src/icon/previous-button.svg);
-    /* box-shadow: 4px 4px 6px black; */
-    background-size: cover;
-    width: 50px;
-    height: 50px;
-    border: 0px none;
-}
-
-#skip {
-    color: rgba(0, 0, 0, 0.0);
-    /* box-shadow: 4px 4px 6px black; */
-    background: url(./src/icon/skip-button.png);
-    background-size: cover;
-    width: 50px;
-    height: 50px;
-    border: 0px none;
-}
-
-#skip:hover, #previous:hover, #play:hover {
-    background-color: rgba(0, 0, 0, 0.1);
-    cursor: pointer;
-}
-
-#namesong {
-    text-align: center;
-    font-family: 'Poppins', 'sans-serif';
-}
-
-#img_cover{
-    height: 300px;
-    width: 300px;
-    margin-left: 16%;
-    margin-top: 12%;
-    border-radius: 5%;
-    box-shadow: 4px 4px 6px;
-} 
