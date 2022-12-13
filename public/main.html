@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link type="text/css" rel="stylesheet" href="./style.css">
+    <title>Slain's online musicplayer</title>
+</head>
+<body>
+    <div id="content"></div>
+    <div id="left_menu">
+        <input id="input-URL" placeholder="Search your song or past the URL">
+        <button id="convert-button">Convertir</button>
+        <script src='./script/frontToEnd.js'></script>
+    </div>
+    <div id="player_background">
+    </div> 
+    <div id="player">
+        <div id="cover">
+        <img src="./src/icon/no-info.png" id="img_cover">
+        <p id="namesong"> Name </p>
+        </div>
+        <div id="buttons">
+            <form>
+                <input type="button" id="previous" value="Previous">
+                <input type="button" id="play" value="Play">
+                <input type="button" id="skip" value="Skip">
+                <script src="./script/player.js"></script>
+            </form>
+        </div>
+    </div>
+    <script type="text/javascript">
+        const source = new EventSource('/events');
+    
+        source.addEventListener('message', message => {
+          console.log('Got', message);
+    
+        //   // Display the event data in the `content` div
+        //   document.querySelector('#content').innerHTML = event.data;
+        });
+      </script> 
+    </body>
+</html>

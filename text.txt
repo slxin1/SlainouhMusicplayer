@@ -1,0 +1,44 @@
+=============================================================================
+                 _______. __          ___       __  .__   __. 
+                /       ||  |        /   \     |  | |  \ |  | 
+               |   (----`|  |       /  ^  \    |  | |   \|  | 
+                \   \    |  |      /  /_\  \   |  | |  . `  | 
+            .----)   |   |  `----./  _____  \  |  | |  |\   | 
+            |_______/    |_______/__/     \__\ |__| |__| \__| 
+
+=============================================================================
+-> Fichier crée à 19h39, le 12/12/2022.
+-> Dans ce fichier "text.txt" se trouve de nombreuses choses comme les choses à changer, les choses à faire, les erreurs etc.
+
+                    ///////////    PRESENTATION     \\\\\\\\\\\\ 
+
+Ce programme est une version améliorée d'un ancien player réalisé il y assez longtemps. Celui-ci est plus complet. Vous mettez le nom/lien de la musique
+le programme le télécharge et vous le joue. Aussi simple que ça.
+
+                    ///////////    ERREURS CONNUES    \\\\\\\\\\\\ 
+
+-> ERREUR-001 : 
+LORSQU'UN NOUVEAU FICHIER "song.mp3" EST TELECHARGE ET REMPLACE L'ANCIEN FICHIER. IL EST IMPOSSIBLE DE LIRE LE NOUVEAU SON SANS DEVOIR RELANCER LA PAGE
+EN INSERANT L'ADRESSE DANS LE NAVIGATEUR.
+
+/// Idées pour régler ce problème.
+-> Supprimer le cache/ mettre en cache le nouveau son.
+-> Lorsque le fichier est téléchargé il est renommé avec le nom de la musique. Et les fichiers plus anciens sont supprimés
+   afin d'avoir un système peu gourmand en stockage.  [i : Semble plus facile à faire]
+
+Statut du bug : PAS CORRIGE (foutu bug)
+13/12/2022 : C'EST ENFIN REGLE PUTAIN DE MERDE
+
+                    ///////////         FEATURES         \\\\\\\\\\\\
+
+-> FEATURE-1 :
+    Ajouter la fonctionnalité permettant de pouvoir trouver une musique juste grâce à son nom.
+    statut : testé et sera ajouté.
+
+-> FEATURE-2 :
+    Mettre la miniature de la musique à la place du "no-info.png".
+    statut : n/a.
+
+-> FEATURE-3 :
+    Conserver les sons écoutés dans un fichier .json (./public/src/history.json)
+    statut : en cours.
